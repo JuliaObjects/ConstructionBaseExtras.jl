@@ -1,4 +1,4 @@
-using StaticArrays
+using .StaticArrays
 
 struct SArrayConstructor{S,N,L} end
 struct MArrayConstructor{S,N,L} end
