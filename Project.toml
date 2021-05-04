@@ -1,0 +1,14 @@
+name = "ConstructionBaseExtras"
+uuid = "914cd950-b775-4282-9f32-54fc4544c321"
+
+authors = ["Rafael Schouten"]
+version = "1.0.0"
+
+[deps]
+ConstructionBase = "187b0558-2788-49d3-abe0-74a17ed4e7c9"
+Requires = "ae029012-a4dd-5104-9daa-d747884805df"
+
+[compat]
+julia = "1"
+Requires = "1"
+ConstructionBase = "1"
