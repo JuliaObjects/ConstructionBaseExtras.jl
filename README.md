@@ -1,7 +1,7 @@
 # ConstructionBaseExtras
 
 ConstructionBaseExtras.jl provides additional extensions to ConstructionBase.jl, 
-that allows modifying immutable objects in Setfield.jl, Accessors.jl, BangBang.jl,
+that allows modifying immutable objects from other packages in Setfield.jl, Accessors.jl, BangBang.jl,
 and Flatten.jl. It's a stop-gap measure until [first-class conditional modules](https://github.com/JuliaLang/Pkg.jl/issues/1285)
 are available, or packages decide to implement the necessary methods themselves.
 
