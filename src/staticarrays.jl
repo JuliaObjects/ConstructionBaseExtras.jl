@@ -15,3 +15,6 @@ ConstructionBase.constructorof(sa::Type{<:MArray{S,<:Any,N,L}}) where {S,N,L} =
     MArrayConstructor{S,N,L}()
 ConstructionBase.constructorof(sa::Type{<:SizedArray{S,<:Any,N,M}}) where {S,N,M} = 
     SizedArrayConstructor{S,N,M}()
+
+ConstructionBase.constructorof(::Type{SVector}) = SVector
+ConstructionBase.constructorof(::Type{MVector}) = MVector
