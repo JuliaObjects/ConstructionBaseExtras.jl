@@ -14,4 +14,12 @@ using ConstructionBaseExtras, StaticArrays, Test, ConstructionBase
     sz2 = ConstructionBase.constructorof(typeof(sz))([:a :b; :c :d]) 
     @test sz2 == SizedArray{Tuple{2,2}}([:a :b; :c :d])
     @test typeof(sz2) <: SizedArray{Tuple{2,2},Symbol,2,2}
+
+    for T in (SVector, MVector)
+        @test ConstructionBase.constructorof(T)((1, 2, 3))::T == T((1, 2, 3))
+        @test ConstructionBase.constructorof(T{3})((1, 2, 3))::T == T((1, 2, 3))
+        @test ConstructionBase.constructorof(T{3, Symbol})((1, 2, 3))::T == T((1, 2, 3))
+        @test ConstructionBase.constructorof(T{3, X} where {X})((1, 2, 3))::T == T((1, 2, 3))
+        @test_broken ConstructionBase.constructorof(T{X, Symbol} where {X})((1, 2, 3))::T == T((1, 2, 3))
+    end
 end
