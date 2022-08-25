@@ -18,8 +18,11 @@ using ConstructionBaseExtras, StaticArrays, Test, ConstructionBase
     for T in (SVector, MVector)
         @test ConstructionBase.constructorof(T)((1, 2, 3))::T == T((1, 2, 3))
         @test ConstructionBase.constructorof(T{3})((1, 2, 3))::T == T((1, 2, 3))
+        @test ConstructionBase.constructorof(T{3})((1, 2))::T == T((1, 2))
         @test ConstructionBase.constructorof(T{3, Symbol})((1, 2, 3))::T == T((1, 2, 3))
+        @test ConstructionBase.constructorof(T{3, Symbol})((1, 2))::T == T((1, 2))
         @test ConstructionBase.constructorof(T{3, X} where {X})((1, 2, 3))::T == T((1, 2, 3))
-        @test_broken ConstructionBase.constructorof(T{X, Symbol} where {X})((1, 2, 3))::T == T((1, 2, 3))
+        @test ConstructionBase.constructorof(T{3, X} where {X})((1, 2))::T == T((1, 2))
+        @test ConstructionBase.constructorof(T{X, Symbol} where {X})((1, 2, 3))::T == T((1, 2, 3))
     end
 end
