@@ -3,6 +3,10 @@
 [![Build Status](https://github.com/JuliaObjects/ConstructionBaseExtras.jl/workflows/CI/badge.svg)](https://github.com/JuliaObjects/ConstructionBaseExtras.jl/actions?query=workflow%3ACI)
 [![Codecov](https://codecov.io/gh/JuliaObjects/ConstructionBaseExtras.jl/branch/master/graph/badge.svg)](https://codecov.io/gh/JuliaObjects/ConstructionBaseExtras.jl)
 
+
+> [!WARNING] 
+> This package is deprecated, the functionaly is now included as an extension to ConstructionBase.jl
+
 ConstructionBaseExtras.jl provides additional extensions to ConstructionBase.jl, 
 that allows modifying immutable objects from other packages in Setfield.jl, Accessors.jl, BangBang.jl,
 and Flatten.jl. It's a stop-gap measure until [first-class conditional modules](https://github.com/JuliaLang/Pkg.jl/issues/1285)
